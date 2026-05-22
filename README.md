@@ -73,7 +73,8 @@ The original site was partly dynamic (PHP + database). Those parts cannot run
 on static hosting, so:
 
 - **News** was database-backed (the live page currently shows a database
-  error). It is rebuilt here as a static page summarising the real releases.
+  error). The real posts were recovered from the Wayback Machine and are
+  served as a static page.
 - **Wiki** and **Forum** ran dynamic software. They are replaced with static
   landing pages that link to the surviving community resources.
 - Google Analytics (a retired tracking property using `document.write`) was

@@ -47,7 +47,9 @@ bundle exec jekyll build   # output in _site/
 - Original is fixed 990px wide; CSS kept as-is. Added a `viewport` meta tag
   so mobile scales instead of clipping.
 - **News** was DB-backed (live site shows "Could not connect to the database").
-  Rebuilt as a static page from the real release history. `feed.xml` mirrors it.
+  The 10 real posts were recovered from the Wayback Machine — the newest
+  snapshot with working content (`web.archive.org`, 2024-02-10, captured
+  while the page still rendered; newest post 2012-04-17). `feed.xml` mirrors it.
 - **Wiki** and **Forum** were dynamic apps — replaced with static landing
   pages linking to surviving community resources (lxalliance.net, SourceForge).
 - Removed dead Google Analytics (`document.write`, retired UA property).

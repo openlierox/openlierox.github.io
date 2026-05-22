@@ -9,22 +9,64 @@ permalink: /feed.xml
     <description>OpenLieroX News</description>
     <language>en-us</language>
     <item>
-      <title>OpenLieroX 0.58 rc5 released</title>
+      <title>[Release] OpenLieroX 0.59 beta10</title>
       <link>{{ site.url }}{{ site.baseurl }}/news/</link>
-      <description>A new stable release adding IPv6 support, gamepad-friendly menu navigation and fixes for network games.</description>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenLieroX 0.59 beta10 available for testing</title>
-      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
-      <description>The 0.59 beta adds programmable levels and mods, special graphics effects, 3D sounds and a single player mode.</description>
+      <description>Huge internal changes: a game object serialization system, Gusanos stabilization and merged Gusanos/LX drawing.</description>
       <pubDate>Tue, 17 Apr 2012 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>OpenLieroX 0.58 rc1 released</title>
+      <title>source code and tracker moved to GitHub</title>
       <link>{{ site.url }}{{ site.baseurl }}/news/</link>
-      <description>A huge update with a more stable network, dedicated server, IRC support and new game modes.</description>
+      <description>The main repository, bug reports and feature requests have moved from SourceForge to GitHub.</description>
+      <pubDate>Sat, 14 May 2011 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LXA as an OpenID provider</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>You can now use your LXA account as an OpenID login on other websites - a first step towards user logins in OLX.</description>
+      <pubDate>Wed, 14 Jul 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why game development is a great learning playground</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>An article on all the topics you can learn about when developing a game.</description>
+      <pubDate>Sun, 16 May 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Contribute to OpenLieroX</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The many ways you can help OpenLieroX, summarised in new Wiki articles.</description>
+      <pubDate>Sun, 09 May 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dedicated server ranking</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>Dedicated server rank lists are now pushed online automatically, including simple clan ranking.</description>
+      <pubDate>Fri, 09 Apr 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Release] OpenLieroX 0.59 beta</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The first 0.59 beta brings full Gusanos support, 3D sounds and single player mode.</description>
       <pubDate>Thu, 21 Jan 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Release] OpenLieroX 0.58 rc</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The first stable release of the 0.58 version, with many crash fixes and better performance.</description>
+      <pubDate>Thu, 21 Jan 2010 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Some news in development organisation</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The project migrated from SVN to Git, with a new branching model for more frequent releases.</description>
+      <pubDate>Mon, 05 Oct 2009 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Release] OpenLieroX 0.58 beta</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The first release under the 0.58 version number, collecting everything new since 0.57 beta8.</description>
+      <pubDate>Mon, 05 Oct 2009 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
