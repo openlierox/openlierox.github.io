@@ -32,6 +32,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Enable Pages automatically on the first run if it is not set up yet.
+          enablement: true
       - name: Build with Jekyll
         # configure-pages provides the correct base_path for project pages.
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
