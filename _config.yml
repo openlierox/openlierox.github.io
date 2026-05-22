@@ -1,0 +1,24 @@
+# --- Site settings ---
+title: OpenLieroX
+description: >-
+  OpenLieroX - extremely addictive realtime worms shoot-em-up backed by an
+  active gamers community. Play the most famous Liero clone! Windows, Linux
+  and Mac OS X version available.
+author: Karel Petránek
+keywords: OpenLieroX LieroX Liero
+
+# Production URL of the site. baseurl stays empty for a custom domain or a
+# user/org GitHub Pages site. For a project page (user.github.io/repo) set
+# baseurl to "/repo".
+url: "https://openlierox.net"
+baseurl: ""
+
+# --- Build settings ---
+# The original site is plain static HTML, so no Jekyll plugins are needed.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - vendor
+  - .github

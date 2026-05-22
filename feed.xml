@@ -1,0 +1,30 @@
+---
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>OpenLieroX.net - News</title>
+    <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+    <description>OpenLieroX News</description>
+    <language>en-us</language>
+    <item>
+      <title>OpenLieroX 0.58 rc5 released</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>A new stable release adding IPv6 support, gamepad-friendly menu navigation and fixes for network games.</description>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenLieroX 0.59 beta10 available for testing</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>The 0.59 beta adds programmable levels and mods, special graphics effects, 3D sounds and a single player mode.</description>
+      <pubDate>Tue, 17 Apr 2012 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenLieroX 0.58 rc1 released</title>
+      <link>{{ site.url }}{{ site.baseurl }}/news/</link>
+      <description>A huge update with a more stable network, dedicated server, IRC support and new game modes.</description>
+      <pubDate>Thu, 21 Jan 2010 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

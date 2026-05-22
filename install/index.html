@@ -1,0 +1,84 @@
+---
+layout: default
+title: Installation
+permalink: /install/
+---
+
+<h2>Installation under Windows</h2>
+<p>
+Unpack the game wherever you like and run OpenLieroX.exe. If the firewall asks you if it should allow network communication for OpenLieroX, answer yes.
+</p>
+
+<h2>Installation under Ubuntu</h2>
+<p>
+<a href="{{ '/downloads/' | relative_url }}">Download the .deb package for your platform</a>. Double-click the downloaded file and click on Install package. The game will be installed and you can access it from Applications &ndash; Games menu.
+</p>
+
+<h2>Installation under Gentoo</h2>
+<p>
+<a href="{{ '/downloads/' | relative_url }}">Download the provided ebuild</a> and install it.
+For example, you can do this using (bad but simple way):
+</p>
+<pre>
+		<b>su</b> -
+		<b>cd</b> /usr/portage
+		<b>mkdir</b> -p games-action/openlierox
+		<b>cd</b> games-action/openlierox
+		<b>wget</b>
+		<b>echo</b> "games-action/openlierox ~x86" >> /etc/portage/package.keywords
+		FEATURES="-strict" emerge openlierox
+</pre>
+<br />
+<p>
+You can also use the <a href="http://my.opera.com/lazy_bum/blog/2007/10/08/mammy-daddy-i-want-roslin">Roslin overlay</a>, they have included OpenLieroX Beta5.
+</p>
+<p>
+Please post any success-stories on Gentoo at this topic on the <a href="http://bugs.gentoo.org/show_bug.cgi?id=164009">Gentoo-Bugtracker</a>.
+</p>
+
+<h2>General installation from source (Linux/Unix/BSD/Mac OS X)</h2>
+<p>
+Either download the most recent source archive from the <a href="{{ '/downloads/' | relative_url }}">download section</a> and extract it or get the sources from SVN by the following command:
+</p>
+<pre>
+		<b>svn</b> co https://openlierox.svn.sourceforge.net/svnroot/openlierox openlierox
+</pre>
+<br />
+<p>
+Take a look into the file DEPS for the information, which dependencies are needed. Install the missing dependencies.
+</p>
+<p>
+Then use the compile.sh to compile it. If you want to install it into your system, use the install.sh. Take a look at these both scripts, if you want information about environment-variables you can use.
+</p>
+<p>
+Use the start.sh script, if you don't want to install it.
+For example:
+</p>
+<pre>
+		./compile.sh
+		./start.sh
+</pre>
+<br />
+
+<h2>Manual installation under Debian/Ubuntu</h2>
+<p>
+Follow the general installation from source instructions. There's one difference though: HawkNL doesn't exist for Debian/Ubuntu. But there is a possibility to compile OpenLieroX with HawkNL builtin. Simply do (after you have installed the needed dependencies):
+</p>
+<pre>
+		HAWKNL_BUILTIN=1 ./compile.sh
+</pre>
+<p>
+If you are getting some errors (missing applications, libraries, or other files), you might try this ultimate one-line command (paste it to Terminal) that will download everything that is needed and compile OpenLieroX:
+</p>
+<p>
+<code>
+sudo apt-get install build-essential subversion cmake libsdl1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev  libgd2-noxpm-dev zlib1g-dev  libzip-dev libxml2-dev libx11-dev ; svn co https://openlierox.svn.sourceforge.net/svnroot/openlierox ; cd openlierox ; cmake -D HAWKNL_BUILTIN=1 -D DEBUG=0 -D X11=1 ./ ; make
+</code>
+</p>
+<p>
+You can then run OpenLieroX anytime by opening the Terminal and typing:
+</p>
+<pre>
+    cd openlierox
+    ./start.sh
+</pre>
