@@ -5,15 +5,18 @@ Migrate https://openlierox.net/ from a paid dynamic (PHP + MySQL) host to a
 free static site on GitHub Pages, built with Jekyll. Replicate the original
 site as closely as possible.
 
-## Status
+## Status — LIVE
 - [x] Downloaded original HTML, CSS and assets into `official/`
 - [x] Jekyll config (`_config.yml`), `Gemfile`, `.gitignore`
 - [x] Shared layout `_layouts/default.html`
 - [x] Pages: index, news, downloads, screenshots, help, faq, install, wiki, forum
 - [x] RSS feed `feed.xml`
 - [x] GitHub Pages deploy workflow `.github/workflows/jekyll.yml`
-- [x] Local Jekyll build verified
-- [ ] Pushed to GitHub; Pages source set to "GitHub Actions" in repo settings
+- [x] Pushed to GitHub; Pages enabled (`build_type: workflow`)
+- [x] Actions run succeeded; site deployed
+
+Live site: https://klirktag.github.io/openlierox-jekyll/
+Repo: https://github.com/klirktag/openlierox-jekyll (default branch `main`)
 
 ## How it works
 - `_layouts/default.html` is the shared shell (head, logo, menu, footer).
