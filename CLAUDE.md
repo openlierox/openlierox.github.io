@@ -52,6 +52,9 @@ bundle exec jekyll build   # output in _site/
   while the page still rendered; newest post 2012-04-17). `feed.xml` mirrors it.
 - **Wiki** and **Forum** were dynamic apps — replaced with static landing
   pages linking to surviving community resources (lxalliance.net, SourceForge).
+  The wiki has ~2640 archived article pages on archive.org; the forum was a
+  database-backed board. Recreating either is intentionally **deferred to a
+  separate repo** — do not attempt it here.
 - Removed dead Google Analytics (`document.write`, retired UA property).
 - Dropped the `<?xml ?>` prolog (triggers quirks mode in old IE); kept the
   XHTML 1.0 Strict doctype.
