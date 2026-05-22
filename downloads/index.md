@@ -4,75 +4,99 @@ title: Downloads
 permalink: /downloads/
 ---
 <div id="downloads_main">
-<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" id="main_img_download" />
-<a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/" id="main_download_link">Download OpenLieroX 0.58 rc5</a>
-<a href="{{ '/install/' | relative_url }}"><img src="{{ '/official/images/help.png' | relative_url }}" alt="Installation instructions" title="View installation instructions" /></a><br />
+
+![Download]({{ '/official/default/images/download.png' | relative_url }}){:#main_img_download}
+[Download OpenLieroX 0.58 rc5](https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/){:#main_download_link}
+[![Installation instructions]({{ '/official/images/help.png' | relative_url }} "View installation instructions")]({{ '/install/' | relative_url }})<br />
 Includes the game, basic skins, levels and weapon modifications.<br />
+
 </div>
 
-<h2 id="beta_heading">Current beta version (for testing purposes)</h2>
+## Current beta version (for testing purposes)
+{:#beta_heading}
+
 <div id="downloads_main_beta">
-<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" id="main_img_download" />
-<a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/" id="main_download_link">Download OpenLieroX 0.59 beta10 for </a>
-<a href="{{ '/install/' | relative_url }}"><img src="{{ '/official/images/help.png' | relative_url }}" alt="Installation instructions" title="View installation instructions" /></a><br />
+
+![Download]({{ '/official/default/images/download.png' | relative_url }}){:#main_img_download}
+[Download OpenLieroX 0.59 beta10 for ](https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/){:#main_download_link}
+[![Installation instructions]({{ '/official/images/help.png' | relative_url }} "View installation instructions")]({{ '/install/' | relative_url }})<br />
 Includes the game, basic skins, levels and weapon modifications.<br />
+
 </div>
 
-<h2>Enhancements &amp; Packs</h2>
+## Enhancements & Packs
 
 <div class="enhancement">
-<img src="{{ '/official/images/levelpack.png' | relative_url }}" alt="Level Pack" class="enhancement_image" />
-<a href="http://sourceforge.net/projects/openlierox/files/packs/Quality%20Files%20Packs/Quality%20Levels%20Pack.rar/download" class="enhancement_link">Quality Level Pack</a><br />
+
+![Level Pack]({{ '/official/images/levelpack.png' | relative_url }}){:.enhancement_image}
+[Quality Level Pack](http://sourceforge.net/projects/openlierox/files/packs/Quality%20Files%20Packs/Quality%20Levels%20Pack.rar/download){:.enhancement_link}<br />
 Contains top-quality levels for the best gaming experience. Just unpack the downloaded file to your &lt;home directory&gt;/OpenLieroX\levels folder.
+
 </div>
 
 <div class="enhancement">
-<img src="{{ '/official/images/skinpack.png' | relative_url }}" alt="Skin Pack" class="enhancement_image" />
-<a href="http://sourceforge.net/projects/openlierox/files/packs/Quality%20Files%20Packs/Quality_Skins_Pack_v2.rar/download" class="enhancement_link">Quality Skins Pack</a><br />
+
+![Skin Pack]({{ '/official/images/skinpack.png' | relative_url }}){:.enhancement_image}
+[Quality Skins Pack](http://sourceforge.net/projects/openlierox/files/packs/Quality%20Files%20Packs/Quality_Skins_Pack_v2.rar/download){:.enhancement_link}<br />
 Contains top-quality skins for your game character. Just unpack the downloaded file to your &lt;home directory&gt;/OpenLieroX\skins folder.
+
 </div>
 
 <div class="enhancement">
-<img src="{{ '/official/images/levelpack.png' | relative_url }}" alt="Level Pack" class="enhancement_image" />
-<a href="https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate_Level_Pack_v2.rar/download" class="enhancement_link">Ultimate Level Pack</a><br />
+
+![Level Pack]({{ '/official/images/levelpack.png' | relative_url }}){:.enhancement_image}
+[Ultimate Level Pack](https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate_Level_Pack_v2.rar/download){:.enhancement_link}<br />
 Contains 99 % of all levels ever created for Liero, LieroX and OpenLieroX. Unpack the downloaded file to your &lt;home directory&gt;/OpenLieroX\levels folder.
+
 </div>
 
 <div class="enhancement">
-<img src="{{ '/official/images/modpack.png' | relative_url }}" alt="Mod Pack" class="enhancement_image" />
-<a href="https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate%20Mod%20Pack%20v4.rar/download" class="enhancement_link">Ultimate Mod Pack</a><br />
+
+![Mod Pack]({{ '/official/images/modpack.png' | relative_url }}){:.enhancement_image}
+[Ultimate Mod Pack](https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate%20Mod%20Pack%20v4.rar/download){:.enhancement_link}<br />
 Contains vast majority of weapon modifications ever created for LieroX and OpenLieroX. Unpack the downloaded file to your &lt;home directory&gt;/OpenLieroX folder.
+
 </div>
 
 <div class="enhancement">
-<img src="{{ '/official/images/skinpack.png' | relative_url }}" alt="Skin Pack" class="enhancement_image" />
-<a href="https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate%20Skin%20Pack%20v2.rar/download" class="enhancement_link">Ultimate Skin Pack</a><br />
+
+![Skin Pack]({{ '/official/images/skinpack.png' | relative_url }}){:.enhancement_image}
+[Ultimate Skin Pack](https://sourceforge.net/projects/openlierox/files/packs/Ultimate%20Level%2C%20Mod%20and%20Skin%20Packs/Ultimate%20Skin%20Pack%20v2.rar/download){:.enhancement_link}<br />
 Contains vast majority of character skins ever made. Just unpack the downloaded file to your &lt;home directory&gt;/OpenLieroX\skins folder.
+
 </div>
 
 <div class="enhancement">
-<img src="{{ '/official/images/filebase.png' | relative_url }}" alt="FileBase" class="enhancement_image" />
-<a href="http://lxalliance.net/forum/index.php?action=mgallery;sa=album;id=12" class="enhancement_link">Find more in the FileBase</a><br />
+
+![FileBase]({{ '/official/images/filebase.png' | relative_url }}){:.enhancement_image}
+[Find more in the FileBase](http://lxalliance.net/forum/index.php?action=mgallery;sa=album;id=12){:.enhancement_link}<br />
 The FileBase contains many OpenLieroX related downloads, such as scripting tools, user modifications, levels, front-ends and more.
+
 </div>
 
-<h2>All OpenLieroX Versions</h2>
+## All OpenLieroX Versions
 
 <div class="release">
-<h3>OpenLieroX 0.58 rc5</h3>
-<div class="release_date">released 2018-30-07</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>IPv6 support</li>
-  <li>Show death count in games with infinite lives</li>
-  <li>Navigate all menus with arrow keys, for better gamepad support</li>
-  <li>Fixed rope warping and explosions not drawn on infinite map</li>
-  <li>Fixed desynced shots in network games. This will not eliminate network lag entirely, but it should improve the situation when your shots hit the other player without doing any damage.</li>
-  <li>Fixed invisible laser in network games</li>
-  <li>New game options: mirror the map, indestructible bonuses</li>
-  <li>Added all player skins from Quality Skins Pack</li>
-  <li>Show weapon name when picking up a bonus, for GunGame gamemode</li>
-</ul>
+
+### OpenLieroX 0.58 rc5
+
+released 2018-30-07
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- IPv6 support
+- Show death count in games with infinite lives
+- Navigate all menus with arrow keys, for better gamepad support
+- Fixed rope warping and explosions not drawn on infinite map
+- Fixed desynced shots in network games. This will not eliminate network lag entirely, but it should improve the situation when your shots hit the other player without doing any damage.
+- Fixed invisible laser in network games
+- New game options: mirror the map, indestructible bonuses
+- Added all player skins from Quality Skins Pack
+- Show weapon name when picking up a bonus, for GunGame gamemode
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/OpenLieroX_0.58_rc5.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/OpenLieroX_0.58_rc5.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/OpenLieroX_0.58_rc5.mac.dmg/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc5/OpenLieroX_0.58_rc5.mac.dmg/download">Mac OS X</a></div>
@@ -84,16 +108,22 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.59 beta10</h3>
-<div class="release_date">released 2012-04-17</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>Added support for programmable levels and mods (using LUA, based on Gusanos)</li>
-  <li>Special light and graphics effects for levels and mods</li>
-  <li>Support for 3D sounds</li>
-  <li>Added sounds for game events (X frags left, timeout etc.)</li>
-  <li>Single player mode</li>
-</ul>
+
+### OpenLieroX 0.59 beta10
+
+released 2012-04-17
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- Added support for programmable levels and mods (using LUA, based on Gusanos)
+- Special light and graphics effects for levels and mods
+- Support for 3D sounds
+- Added sounds for game events (X frags left, timeout etc.)
+- Single player mode
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/OpenLieroX_0.59_beta10.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/OpenLieroX_0.59_beta10.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/OpenLieroX_0.59_beta10.mac.dmg/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/OpenLieroX_0.59_beta10.mac.dmg/download">Mac OS X</a></div>
@@ -106,39 +136,45 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.58 rc1</h3>
-<div class="release_date">released 2010-21-01</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>Uploadlimit check fixed + automatic measuring of speed</li>
-  <li>More stable network (CChannel3)</li>
-  <li>Improved HTML viewer</li>
-  <li>IRC support</li>
-  <li>Dedicated server becomes useable</li>
-  <li>Improved connect-during-game</li>
-  <li>Background music by <a href="http://www.corentin-larsen.fr">Corentin Larsen</a></li>
-  <li>Damage reporting (shows how much you injured a worm)</li>
-  <li>New game options dialog</li>
-  <li>Ingame console can be used everywhere, also in menu</li>
-  <li>Ingame console much more advanced, many new commands, better autocompletion</li>
-  <li>New debug logging system</li>
-  <li>Hide &amp; Seek gamemode</li>
-  <li>Capture The Flag gamemode</li>
-  <li>Race / Team Race gamemodes</li>
-  <li>Air jumping as an optional feature</li>
-  <li>Extended physics engine / gamescript (still in development)</li>
-  <li>High-resolution level support</li>
-  <li>Possibility to make maps infinite</li>
-  <li>Possibility to disable minimap</li>
-  <li>Support for Commander Keen 1-3 levels</li>
-  <li>Game size factor (you can make everything bigger or smaller)</li>
-  <li>Hit/damage yourself/teammembers can be enabled/disabled (aka friendly fire on/off)</li>
-  <li>Immediate start</li>
-  <li>Worm speed/damage/shield/friction factor</li>
-  <li>Projectile friction factor</li>
-  <li>Physics should be exactly like LX56 now</li>
-  <li>Select weapons ingame (chat command /weapons)</li>
-</ul>
+
+### OpenLieroX 0.58 rc1
+
+released 2010-21-01
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- Uploadlimit check fixed + automatic measuring of speed
+- More stable network (CChannel3)
+- Improved HTML viewer
+- IRC support
+- Dedicated server becomes useable
+- Improved connect-during-game
+- Background music by [Corentin Larsen](http://www.corentin-larsen.fr)
+- Damage reporting (shows how much you injured a worm)
+- New game options dialog
+- Ingame console can be used everywhere, also in menu
+- Ingame console much more advanced, many new commands, better autocompletion
+- New debug logging system
+- Hide & Seek gamemode
+- Capture The Flag gamemode
+- Race / Team Race gamemodes
+- Air jumping as an optional feature
+- Extended physics engine / gamescript (still in development)
+- High-resolution level support
+- Possibility to make maps infinite
+- Possibility to disable minimap
+- Support for Commander Keen 1-3 levels
+- Game size factor (you can make everything bigger or smaller)
+- Hit/damage yourself/teammembers can be enabled/disabled (aka friendly fire on/off)
+- Immediate start
+- Worm speed/damage/shield/friction factor
+- Projectile friction factor
+- Physics should be exactly like LX56 now
+- Select weapons ingame (chat command /weapons)
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc1/OpenLieroX_0.58_rc1.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc1/OpenLieroX_0.58_rc1.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc1/OpenLieroX_0.58_rc1.mac.dmg/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.58%20rc1/OpenLieroX_0.58_rc1.mac.dmg/download">Mac OS X</a></div>
@@ -150,13 +186,19 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 rc1</h3>
-<div class="release_date">released 2008-05-10</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>Fixed most crashes that were reported</li>
-	<li>Fixed big lags when hosting a server because of wrong bandwidth handling</li>
-</ul>
+
+### OpenLieroX 0.57 rc1
+
+released 2008-05-10
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- Fixed most crashes that were reported
+- Fixed big lags when hosting a server because of wrong bandwidth handling
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20rc1/OpenLieroX_0.57_rc1.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20rc1/OpenLieroX_0.57_rc1.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20rc1/OpenLieroX_0.57_rc1.mac.dmg/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20rc1/OpenLieroX_0.57_rc1.mac.dmg/download">Mac OS X</a></div>
@@ -168,19 +210,25 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta8</h3>
-<div class="release_date">released 2008-10-09</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>Chatbox has HTML and copy&amp;paste support</li>
-	<li>Connect during game support</li>
-	<li>Fixed max upload bandwidth limit</li>
-	<li>Menu_MessageBox can handle long messages correctly</li>
-	<li>Better synchronisation for shooting, that should also fix the self-shooting problem</li>
-	<li>Reconnects from a client are handled better</li>
-	<li>General fixes of new features (since Beta6)</li>
-	<li>Removed Media Player</li>
-</ul>
+
+### OpenLieroX 0.57 beta8
+
+released 2008-10-09
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- Chatbox has HTML and copy&paste support
+- Connect during game support
+- Fixed max upload bandwidth limit
+- Menu_MessageBox can handle long messages correctly
+- Better synchronisation for shooting, that should also fix the self-shooting problem
+- Reconnects from a client are handled better
+- General fixes of new features (since Beta6)
+- Removed Media Player
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta8/OpenLieroX_0.57_beta8.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta8/OpenLieroX_0.57_beta8.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta8/OpenLieroX_0.57_beta8.mac.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta8/OpenLieroX_0.57_beta8.mac.zip/download">Mac OS X</a></div>
@@ -193,19 +241,23 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta7</h3>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>Game-speed multiplicator</li>
-  <li>Options editable from everywhere in the game</li>
-  <li>Force random weapon selection (with the extensions to have the same weapon for all players)</li>
-  <li>Automatic weapon selection if only one weapon is available</li>
-  <li>Notify application window on events when application is in background</li>
-  <li>Auto-completion for chat commands</li>
-  <li>Command button for host in game</li>
-  <li>Show player online/chatting/away status</li>
-  <li>Client info dialog for host</li>
-</ul>
+
+### OpenLieroX 0.57 beta7
+
+Changelog:
+{:.release_changelog_title}
+
+- Game-speed multiplicator
+- Options editable from everywhere in the game
+- Force random weapon selection (with the extensions to have the same weapon for all players)
+- Automatic weapon selection if only one weapon is available
+- Notify application window on events when application is in background
+- Auto-completion for chat commands
+- Command button for host in game
+- Show player online/chatting/away status
+- Client info dialog for host
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta7/OpenLieroX_0.57_beta7.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta7/OpenLieroX_0.57_beta7.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta7/OpenLieroX_0.57_Beta7.mac.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta7/OpenLieroX_0.57_Beta7.mac.zip/download">Mac OS X</a></div>
@@ -215,31 +267,35 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta6</h3>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>fixed crashing in DBZ mod</li>
-  <li>improved connecting to servers behind firewall/NAT</li>
-  <li>reduced the loading time of IP to Country database a bit</li>
-  <li>added support for G15 keyboards</li>
-  <li>improved downloading, added mod downloading</li>
-  <li>fixed a security bug in the authorise command</li>
-  <li>added video post processors that change the final appearance of the screen</li>
-  <li>updated joystick control</li>
-  <li>recovered compatibility with Windows 98/ME</li>
-  <li>faster projectile simulation</li>
-  <li>fixed spawning in rock in random maps</li>
-  <li>fixed duplicate joining</li>
-  <li>fixed weird game behavior when kicking bot</li>
-  <li>fixed crashes in the viewport manager dialog</li>
-  <li>added map anti-aliasing</li>
-  <li>fixed crashes in the News tab</li>
-  <li>improved crash reporting tool</li>
-  <li>fixed bots not shooting with beam weapons</li>
-  <li>fixes in physics (wallshooting, self-shooting, flying at the top of the level)</li>
-  <li>server displays only one message on multiple suicides</li>
-  <li>optionally attach a console window using -console under Windows</li>
-</ul>
+
+### OpenLieroX 0.57 beta6
+
+Changelog:
+{:.release_changelog_title}
+
+- fixed crashing in DBZ mod
+- improved connecting to servers behind firewall/NAT
+- reduced the loading time of IP to Country database a bit
+- added support for G15 keyboards
+- improved downloading, added mod downloading
+- fixed a security bug in the authorise command
+- added video post processors that change the final appearance of the screen
+- updated joystick control
+- recovered compatibility with Windows 98/ME
+- faster projectile simulation
+- fixed spawning in rock in random maps
+- fixed duplicate joining
+- fixed weird game behavior when kicking bot
+- fixed crashes in the viewport manager dialog
+- added map anti-aliasing
+- fixed crashes in the News tab
+- improved crash reporting tool
+- fixed bots not shooting with beam weapons
+- fixes in physics (wallshooting, self-shooting, flying at the top of the level)
+- server displays only one message on multiple suicides
+- optionally attach a console window using -console under Windows
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta6/OpenLieroX_0.57_beta6.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta6/OpenLieroX_0.57_beta6.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta6/OpenLieroX_0.57_beta6.mac.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta6/OpenLieroX_0.57_beta6.mac.zip/download">Mac OS X</a></div>
@@ -250,19 +306,24 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta5</h3>
-<div class="release_date">released 2008-03-15</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>fast and easy theme switching
-  (and LieroX 0.56 theme included)</li>
-  <li>disallow strafing on server if wanted</li>
-  <li>optimised/fixed joystick support</li>
-  <li>optimised network</li>
-  <li>fixed aiming bug of Beta4</li>
-  <li>spectate option for host</li>
-  <li>bugfixes</li>
-</ul>
+
+### OpenLieroX 0.57 beta5
+
+released 2008-03-15
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- fast and easy theme switching (and LieroX 0.56 theme included)
+- disallow strafing on server if wanted
+- optimised/fixed joystick support
+- optimised network
+- fixed aiming bug of Beta4
+- spectate option for host
+- bugfixes
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta5/OpenLieroX_0.57_beta5.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta5/OpenLieroX_0.57_beta5.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta5/OpenLieroX_0.57_beta5.mac.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta5/OpenLieroX_0.57_beta5.mac.zip/download">Mac OS X</a></div>
@@ -274,41 +335,43 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta4</h3>
-<div class="release_date">released 2008-02-23</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>very basic dedicated server</li>
-  <li>joystick support (for playing)</li>
-  <li>mouse support (for playing)</li>
-  <li>copy&amp;paste support for Linux and MacOSX</li>
-  <li>config file got parsed completly and unknown options are kept, therefore forward-compatible</li>
-  <li>better forward-compatibility for net-protocol</li>
-  <li>FPS independent physics</li>
-  <li>more correct projectile simulation</li>
-  <li>experimental file transfer support</li>
-  <li>delete-key works now under MacOSX</li>
-  <li>more keys got recognised
-  (super and meta keys, that includes also the
-  Apple-key on a Mac)</li>
-  <li>support for multiple masterservers</li>
-  <li>more intelligent event-handling (in some parts);
-  all pressed keys got recognised in chat/console
-  and you can also play on very low FPS</li>
-  <li>DNS support for serverlist</li>
-  <li>Worm AI improvements</li>
-  <li>usage of ALSA on Linux by default</li>
-  <li>network improved</li>
-  <li>cache for map and gamescript</li>
-  <li>Developer documentation</li>
-  <li>strafing</li>
-  <li>optimised sorting in combobox</li>
-  <li>FPS limit is also valid for menu</li>
-  <li>menu takes less resources</li>
-  <li>help for weapon selection</li>
-  <li>fixed changing of graphic settings</li>
-  <li>and a lot of other fixes / cleanups</li>
-</ul>
+
+### OpenLieroX 0.57 beta4
+
+released 2008-02-23
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- very basic dedicated server
+- joystick support (for playing)
+- mouse support (for playing)
+- copy&paste support for Linux and MacOSX
+- config file got parsed completly and unknown options are kept, therefore forward-compatible
+- better forward-compatibility for net-protocol
+- FPS independent physics
+- more correct projectile simulation
+- experimental file transfer support
+- delete-key works now under MacOSX
+- more keys got recognised (super and meta keys, that includes also the Apple-key on a Mac)
+- support for multiple masterservers
+- more intelligent event-handling (in some parts); all pressed keys got recognised in chat/console and you can also play on very low FPS
+- DNS support for serverlist
+- Worm AI improvements
+- usage of ALSA on Linux by default
+- network improved
+- cache for map and gamescript
+- Developer documentation
+- strafing
+- optimised sorting in combobox
+- FPS limit is also valid for menu
+- menu takes less resources
+- help for weapon selection
+- fixed changing of graphic settings
+- and a lot of other fixes / cleanups
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta4/OpenLieroX_0.57_beta4.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta4/OpenLieroX_0.57_beta4.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta4/OpenLieroX_0.57_beta4.mac.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta4/OpenLieroX_0.57_beta4.mac.zip/download">Mac OS X</a></div>
@@ -320,24 +383,28 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta3</h3>
-<div class="release_date">released 2007-08-10</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>16/24/32 bit graphic support and OpenGL support</li>
-  <li>runs on MacOSX </li>
-  <li>new design &amp; icon (thanks go to Raziel)</li>
-  <li>probably fixed any saving-problem
-  (problem was: sometimes SDL_Quit gives a segfault
-  and saving was done after this; now it's done before)</li>
-  <li>full Unicode/UTF8 support</li>
-  <li>font antialasing support</li>
-  <li>working Dev-C++ project (therefore MingW support)</li>
-  <li>MaxFPS in option-dialog</li>
-  <li>Worm AI improvements</li>
-  <li>ninjarope physic simulation is FPS independent</li>
-  <li>profile-saving is correct now</li>
-</ul>
+
+### OpenLieroX 0.57 beta3
+
+released 2007-08-10
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- 16/24/32 bit graphic support and OpenGL support
+- runs on MacOSX
+- new design & icon (thanks go to Raziel)
+- probably fixed any saving-problem (problem was: sometimes SDL_Quit gives a segfault and saving was done after this; now it's done before)
+- full Unicode/UTF8 support
+- font antialasing support
+- working Dev-C++ project (therefore MingW support)
+- MaxFPS in option-dialog
+- Worm AI improvements
+- ninjarope physic simulation is FPS independent
+- profile-saving is correct now
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta3/OpenLieroX_0.57_beta3.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta3/OpenLieroX_0.57_beta3.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta3/OpenLieroX_0.57_beta3.macosx.zip/download"><img src="{{ '/official/images/macosx.png' | relative_url }}" alt="Mac OS X" title="Mac OS X" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta3/OpenLieroX_0.57_beta3.macosx.zip/download">Mac OS X</a></div>
@@ -349,26 +416,30 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta2</h3>
-<div class="release_date">released 2007-04-09</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>BPP independent</li>
-  <li>ingame mediaplayer</li>
-  <li>64bit version works now</li>
-  <li>more fixes, general improvements, etc.</li>
-  <li>code cleanups (replacements with C++/STL technics)</li>
-  <li>whole project uses std::string now (realy huge change)</li>
-  <li>collision-checks are improved (more like the original LX, that
-  means, it goes at least through walls with ~3px width)</li>
-  <li>chatbox improvements</li>
-  <li>unlimited number of bots in net play</li>
-  <li>~/ at the beginning of a searchpath is handled correctly and there
-  is a more correct method to get the homedir</li>
-  <li>MaxFPS option under [Advanced] in ~/.OpenLieroX/cfg/options.cfg</li>
-  <li>fixed compile-issues on 64bit systems</li>
-  <li>no-clipping-issues with weapon-generated dirt are fixed</li>
-</ul>
+
+### OpenLieroX 0.57 beta2
+
+released 2007-04-09
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- BPP independent
+- ingame mediaplayer
+- 64bit version works now
+- more fixes, general improvements, etc.
+- code cleanups (replacements with C++/STL technics)
+- whole project uses std::string now (realy huge change)
+- collision-checks are improved (more like the original LX, that means, it goes at least through walls with ~3px width)
+- chatbox improvements
+- unlimited number of bots in net play
+- ~/ at the beginning of a searchpath is handled correctly and there is a more correct method to get the homedir
+- MaxFPS option under [Advanced] in ~/.OpenLieroX/cfg/options.cfg
+- fixed compile-issues on 64bit systems
+- no-clipping-issues with weapon-generated dirt are fixed
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta2/OpenLieroX_0.57_beta2.win32.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta2/OpenLieroX_0.57_beta2.win32.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="http://openlierox.sourceforge.net/ebuild/games-action/openlierox/openlierox-0.57_beta2.ebuild"><img src="{{ '/official/images/gentoo.png' | relative_url }}" alt="Gentoo" title="Gentoo" /></a><br /><a href="http://openlierox.sourceforge.net/ebuild/games-action/openlierox/openlierox-0.57_beta2.ebuild">Gentoo</a></div>
@@ -378,20 +449,25 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 </div>
 
 <div class="release">
-<h3>OpenLieroX 0.57 beta1</h3>
-<div class="release_date">released 2007-01-27</div>
-<div class="release_changelog_title">Changelog:</div>
-<ul class="release_changelog">
-  <li>POSIX-compatible (well-tested under Linux).</li>
-  <li>endian-independent (runs without any problems on my big endian PPC)</li>
-  <li>a <strong>huge</strong> amount of bug-fixes</li>
-  <li>the old BASS soundsystem was replaced by SDL_mixer</li>
-  <li>new file handling routines
-  (1. based on searchpaths; 2. case-insensitive handling)</li>
-  <li>new bot AI with a very nice pathfinding-algo</li>
-  <li>some other additions/extensions/...</li>
-  <li>...</li>
-</ul>
+
+### OpenLieroX 0.57 beta1
+
+released 2007-01-27
+{:.release_date}
+
+Changelog:
+{:.release_changelog_title}
+
+- POSIX-compatible (well-tested under Linux).
+- endian-independent (runs without any problems on my big endian PPC)
+- a **huge** amount of bug-fixes
+- the old BASS soundsystem was replaced by SDL_mixer
+- new file handling routines (1. based on searchpaths; 2. case-insensitive handling)
+- new bot AI with a very nice pathfinding-algo
+- some other additions/extensions/...
+- ...
+{:.release_changelog}
+
 <div class="release_downloads">
 <div class="release_download_platform"><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta1/OpenLieroX_0.57_beta1.win32.patch.zip/download"><img src="{{ '/official/images/windows.png' | relative_url }}" alt="Windows" title="Windows" /></a><br /><a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.57%20Beta1/OpenLieroX_0.57_beta1.win32.patch.zip/download">Windows</a></div>
 <div class="release_download_platform"><a href="http://openlierox.sourceforge.net/ebuild/games-action/openlierox/openlierox-0.57_beta1.ebuild"><img src="{{ '/official/images/gentoo.png' | relative_url }}" alt="Gentoo" title="Gentoo" /></a><br /><a href="http://openlierox.sourceforge.net/ebuild/games-action/openlierox/openlierox-0.57_beta1.ebuild">Gentoo</a></div>

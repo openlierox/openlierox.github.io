@@ -21,6 +21,14 @@ Repo: https://github.com/klirktag/openlierox-jekyll (default branch `main`)
 ## How it works
 - `_layouts/default.html` is the shared shell (head, logo, menu, footer).
   Pages set `title`/`description` in front matter; the layout fills the rest.
+- Content pages are **Markdown** (`*.md`, kramdown). `_config.yml` sets
+  `kramdown.parse_block_html: true` so Markdown can be authored inside the
+  few raw `<div>` wrappers that keep the original CSS hooks.
+- CSS classes/ids are attached to Markdown blocks with kramdown IAL syntax:
+  `{:.classname}` on the line after a block, `{:#id}` / `{:.class}` after an
+  inline image or link. Structural wrapper `<div>`s (faq_item, release,
+  screenshot_holder, the download boxes, the platform-icon grids) stay as
+  raw HTML inside the `.md` files because Markdown has no equivalent.
 - Asset and link URLs use the `relative_url` filter so the site works under
   any `baseurl` (custom domain or project page).
 - The original CSS is kept verbatim at `official/default/main.css`; its
