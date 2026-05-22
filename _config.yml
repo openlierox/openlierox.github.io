@@ -13,8 +13,15 @@ keywords: OpenLieroX LieroX Liero
 url: "https://openlierox.net"
 baseurl: ""
 
+# --- Markdown settings ---
+# Pages are written in Markdown (kramdown). parse_block_html lets Markdown
+# be used inside the few raw <div> wrappers that keep the original CSS hooks.
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 # --- Build settings ---
-# The original site is plain static HTML, so no Jekyll plugins are needed.
+# No Jekyll plugins are needed; the site is plain pages and assets.
 exclude:
   - Gemfile
   - Gemfile.lock
