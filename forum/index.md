@@ -24,6 +24,3 @@ Jump straight to a category:
 - [Ideas](https://github.com/orgs/openlierox/discussions/categories/ideas) &ndash; suggest features and improvements
 - [Show and tell](https://github.com/orgs/openlierox/discussions/categories/show-and-tell) &ndash; share mods, levels, skins and screenshots
 - [Announcements](https://github.com/orgs/openlierox/discussions/categories/announcements) &ndash; news and release notes
-
-You can also reach the wider community at the [LXAlliance Forum](http://www.lxalliance.net/forum/)
-and on [SourceForge](https://sourceforge.net/projects/openlierox/).

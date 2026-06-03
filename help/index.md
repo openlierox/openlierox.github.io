@@ -17,7 +17,7 @@ Look in this section first. It contains answers to common user questions.
 <div class="help_item">
 
 ![Wiki]({{ '/official/images/wiki.png' | relative_url }}){:.help_img}
-[Search the Wiki]({{ '/wiki/' | relative_url }}){:.help_title}<br />
+[Search the Wiki](https://github.com/openlierox/wiki/wiki){:.help_title}<br />
 Our Wiki contains a lot of valuable information about the game. You will find there how to make weapon modifications, levels, skins and much more...
 
 <div class="help_end"></div>
@@ -26,7 +26,7 @@ Our Wiki contains a lot of valuable information about the game. You will find th
 <div class="help_item">
 
 ![Forums]({{ '/official/images/forum.png' | relative_url }}){:.help_img}
-[Visit our Forums]({{ '/forum/' | relative_url }}){:.help_title}<br />
+[Visit our Forums](https://github.com/orgs/openlierox/discussions){:.help_title}<br />
 OpenLieroX has a big community and there is always someone who will help you. The forum is the best place for your help requests.
 
 <div class="help_end"></div>
