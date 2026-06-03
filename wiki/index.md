@@ -16,8 +16,3 @@ account to read or edit the articles.
 Browse guides and tutorials, or contribute your own articles about modding, level design and skinning.
 
 </div>
-
-You can also find more guides and tutorials with the wider community at the
-[LXAlliance Wiki](http://www.lxalliance.net/wiki/) and on
-[SourceForge](https://sourceforge.net/projects/openlierox/), or check the
-[Frequently Asked Questions]({{ '/faq/' | relative_url }}).
