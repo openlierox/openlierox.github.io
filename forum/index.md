@@ -5,13 +5,28 @@ permalink: /forum/
 ---
 ## OpenLieroX Forum
 
-Discussion now happens on GitHub Discussions.
+Discussion happens here, powered by
+[GitHub Discussions](https://github.com/openlierox/openlierox.github.io/discussions).
+Sign in with a GitHub account to read and post.
 
-<iframe src="https://github.com/orgs/openlierox/discussions"
-        title="OpenLieroX Discussions"
-        width="100%" height="800"
-        style="border: 1px solid #ccc;">
-</iframe>
+<script src="https://giscus.app/client.js"
+        data-repo="openlierox/openlierox.github.io"
+        data-repo-id="R_kgDOSvySLA"
+        data-category="General"
+        data-category-id="DIC_kwDOSvySLM4C-aLh"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
 
-If the board above does not load,
-[open the Forum on GitHub](https://github.com/orgs/openlierox/discussions).
+<noscript>
+JavaScript is required to load the discussion board.
+You can also
+<a href="https://github.com/openlierox/openlierox.github.io/discussions">open the Forum on GitHub</a>.
+</noscript>
