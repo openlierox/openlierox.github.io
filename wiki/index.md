@@ -5,13 +5,19 @@ permalink: /wiki/
 ---
 ## OpenLieroX Wiki
 
-The OpenLieroX Wiki was a community-edited knowledge base covering weapon
-modifications, level making, skins and more. It ran on dynamic wiki software,
-which cannot be hosted on static GitHub Pages.
+The community knowledge base is hosted on the **GitHub Wiki** &ndash; covering
+weapon modifications, level making, skins and more. Sign in with any GitHub
+account to read or edit the articles.
 
-The wiki content lives on with the community. You can still find guides and
-tutorials here:
+<div class="enhancement">
 
-- [LXAlliance Wiki](http://www.lxalliance.net/wiki/) &ndash; level making, scripting and skin tutorials
-- [OpenLieroX on SourceForge](https://sourceforge.net/projects/openlierox/) &ndash; source code, releases and developer documentation
-- [Frequently Asked Questions]({{ '/faq/' | relative_url }}) &ndash; answers to the most common questions
+![Wiki]({{ '/official/images/wiki.png' | relative_url }}){:.enhancement_image}
+[Open the OpenLieroX Wiki &raquo;](https://github.com/openlierox/wiki/wiki){:.enhancement_link}<br />
+Browse guides and tutorials, or contribute your own articles about modding, level design and skinning.
+
+</div>
+
+You can also find more guides and tutorials with the wider community at the
+[LXAlliance Wiki](http://www.lxalliance.net/wiki/) and on
+[SourceForge](https://sourceforge.net/projects/openlierox/), or check the
+[Frequently Asked Questions]({{ '/faq/' | relative_url }}).
