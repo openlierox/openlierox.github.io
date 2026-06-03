@@ -17,8 +17,8 @@ site as closely as possible.
 - [x] All content pages converted from HTML to Markdown (kramdown + IAL),
       verified on the live site (CSS classes/ids render correctly)
 
-Live site: https://klirktag.github.io/openlierox-jekyll/
-Repo: https://github.com/klirktag/openlierox-jekyll (default branch `main`)
+Live site: https://openlierox.github.io/
+Repo: https://github.com/openlierox/openlierox.github.io (default branch `main`)
 
 ## How it works
 - `_layouts/default.html` is the shared shell (head, logo, menu, footer).
