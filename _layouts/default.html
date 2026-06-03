@@ -16,6 +16,11 @@
 <title>{% if page.title %}{{ page.title }} - {% endif %}OpenLieroX</title>
 {% if page.rss %}<link href="{{ '/feed.xml' | relative_url }}" type="application/rss+xml" rel="alternate" title="RSS news" />{% endif %}
 
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}" />
+
 <link rel="stylesheet" type="text/css" href="{{ '/official/default/main.css' | relative_url }}" media="screen" />
 <link rel="stylesheet" type="text/css" href="{{ '/official/default/main_print.css' | relative_url }}" media="print" />
 </head>
