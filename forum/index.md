@@ -12,7 +12,7 @@ account to read and post.
 <div class="enhancement">
 
 ![Forum]({{ '/official/images/forum.png' | relative_url }}){:.enhancement_image}
-[Open the OpenLieroX Forum &raquo;](https://github.com/openlierox/openlierox){:.enhancement_link}<br />
+[Open the OpenLieroX Forum &raquo;](https://github.com/openlierox/openlierox/discussions){:.enhancement_link}<br />
 Browse all topics, start a new thread, ask for help or share your mods, levels and skins.
 
 </div>
