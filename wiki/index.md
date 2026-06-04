@@ -12,7 +12,7 @@ account to read or edit the articles.
 <div class="enhancement">
 
 ![Wiki]({{ '/official/images/wiki.png' | relative_url }}){:.enhancement_image}
-[Open the OpenLieroX Wiki &raquo;](https://github.com/openlierox/wiki/wiki){:.enhancement_link}<br />
+[Open the OpenLieroX Wiki &raquo;](https://github.com/openlierox/openlierox/wiki){:.enhancement_link}<br />
 Browse guides and tutorials, or contribute your own articles about modding, level design and skinning.
 
 </div>
