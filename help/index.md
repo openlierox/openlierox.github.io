@@ -26,7 +26,7 @@ Our Wiki contains a lot of valuable information about the game. You will find th
 <div class="help_item">
 
 ![Forums]({{ '/official/images/forum.png' | relative_url }}){:.help_img}
-[Visit our Forums](https://github.com/orgs/openlierox/discussions){:.help_title}<br />
+[Visit our Forums](https://github.com/openlierox/openlierox){:.help_title}<br />
 OpenLieroX has a big community and there is always someone who will help you. The forum is the best place for your help requests.
 
 <div class="help_end"></div>
