@@ -16,8 +16,9 @@
 .menu  {
 	margin-top: 154px;
 	margin-left: 140px;
-	width: 700px;
 	position: absolute;
+	display: flex;
+	flex-wrap: nowrap;
 	border-left: 1px solid #CCCCCC;
 }
  
@@ -26,9 +27,9 @@
 	font-size: 13px;
 	font-weight: bold;
 	color: black;
-	float: left;
 	height: 29px;
 	line-height: 29px;
+	white-space: nowrap;
 	vertical-align: middle;
 	padding-left: 20px;
 	padding-right: 20px;
