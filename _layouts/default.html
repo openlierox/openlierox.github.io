@@ -63,5 +63,19 @@
     </div>
   </div>
   </div>
+
+  <!-- Open external links in a new tab so visitors don't accidentally leave the site. -->
+  <script>
+    (function () {
+      var links = document.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        var link = links[i];
+        if (link.hostname && link.hostname !== window.location.hostname) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
