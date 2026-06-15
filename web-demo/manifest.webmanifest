@@ -1,0 +1,22 @@
+---
+# Front matter (even empty) makes Jekyll run Liquid on this file, so the
+# relative_url filters below resolve under any baseurl. No layout is applied.
+layout: null
+---
+{
+  "name": "OpenLieroX",
+  "short_name": "OpenLieroX",
+  "description": "OpenLieroX — extremely addictive realtime worms shoot-em-up. The WebAssembly build, installable as a full-screen local web app.",
+  "lang": "en",
+  "start_url": "{{ '/web-demo/shell.html' | relative_url }}",
+  "scope": "{{ '/web-demo/' | relative_url }}",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    { "src": "{{ '/web-demo/icon-256.png' | relative_url }}", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "{{ '/web-demo/icon-512.png' | relative_url }}", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -20,6 +20,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}" />
+{% if page.manifest %}<!-- Opt-in per page (web-demo): lets that page offer "Install web app"; the
+     manifest's start_url installs the standalone shell, not this page. -->
+<link rel="manifest" href="{{ page.manifest | relative_url }}" />{% endif %}
 
 <link rel="stylesheet" type="text/css" href="{{ '/official/default/main.css' | relative_url }}" media="screen" />
 <link rel="stylesheet" type="text/css" href="{{ '/official/default/main_print.css' | relative_url }}" media="print" />

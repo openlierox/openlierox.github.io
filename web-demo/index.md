@@ -2,6 +2,7 @@
 layout: default
 title: Web Demo
 permalink: /web-demo/
+manifest: /web-demo/manifest.webmanifest
 ---
 <!--
   The WebAssembly build of OpenLieroX is multi-threaded (pthreads /
@@ -32,6 +33,9 @@ has worse performance than running the game locally.
 
 For the full experience [Download the game]({{ '/downloads/' | relative_url }}).
 
+You can also [open the demo as a full-screen web app]({{ '/web-demo/shell.html' | relative_url }})
+and install it to your device's home screen for a chrome-free, native-like experience.
+
 {::nomarkdown}
 <style>
 #olx-game{display:flex;flex-direction:column;align-items:center;background:#111;color:#ddd;font-family:system-ui,sans-serif;border:1px solid #444;margin:0 auto;max-width:960px}
@@ -56,12 +60,45 @@ For the full experience [Download the game]({{ '/downloads/' | relative_url }}).
     <canvas id="canvas" width="640" height="480" tabindex="-1" oncontextmenu="event.preventDefault()"></canvas>
     <div id="status">Loading OpenLieroX…</div>
   </div>
-  <div id="toolbar"><button id="fs-toggle" type="button">Enter fullscreen</button></div>
+  <div id="toolbar"><button id="fs-toggle" type="button">Enter fullscreen</button> <button id="install-btn" type="button">Install web app</button></div>
   <pre id="log"></pre>
 </div>
 
 <script>
 const statusEl=document.getElementById("status"),logEl=document.getElementById("log");function appendLog(e,t){logEl.textContent+=e+"\n",logEl.scrollTop=logEl.scrollHeight,t&&logEl.classList.add("err")}let loadingDone=!1;function showStarting(){loadingDone||(loadingDone=!0,statusEl.style.display="",statusEl.classList.remove("err"),statusEl.textContent="Starting OpenLieroX…")}function exitFullscreenIfActive(){document.fullscreenElement&&document.exitFullscreen().catch((()=>{}))}window.olxOnEngineExit=e=>exitFullscreenIfActive(),window.olxOnEngineReady=()=>{statusEl.style.display="none"};var Module={locateFile:(p)=>"{{ '/web-demo/2026-06-15/' | relative_url }}"+p,canvas:(()=>{const e=document.getElementById("canvas");return e.addEventListener("webglcontextlost",(e=>{alert("WebGL context lost — please reload."),e.preventDefault()}),!1),e})(),print:e=>{Module.printAccept&&!Module.printAccept(e)||(console.log(e),appendLog(e,!1))},printErr:e=>{Module.printAccept&&!Module.printAccept(e)||(console.warn(e),appendLog(e,!0))},setStatus:e=>{if(/error|abort|exception/i.test(e=e||""))return statusEl.style.display="",statusEl.textContent=e,void statusEl.classList.add("err");if(loadingDone)return;const t=/^Downloading data\.\.\. \((\d+)\/(\d+)\)$/.exec(e);t&&t[1]===t[2]?showStarting():(statusEl.style.display=e?"":"none",statusEl.textContent=e,statusEl.classList.remove("err"))},monitorRunDependencies:e=>{0===e&&showStarting()},printAccept:e=>!/^(dependency:|still waiting on run dependencies|\(end of list\))/.test(e),onAbort:e=>{exitFullscreenIfActive(),Module.setStatus("Aborted: "+e)},onExit:()=>exitFullscreenIfActive()};Module.setStatus("Downloading…"),window.onerror=e=>Module.setStatus("Exception: "+e),(()=>{const e=Module.canvas,t=e.getBoundingClientRect.bind(e);e.getBoundingClientRect=function(){const e=t(),n=this.width,o=this.height;if(!(e.width&&e.height&&n&&o))return e;const l=n/o,s=e.width/e.height;if(Math.abs(s-l)<.001)return e;let a,i;return s>l?(i=e.height,a=i*l):(a=e.width,i=a/l),new DOMRect(e.left+(e.width-a)/2,e.top+(e.height-i)/2,a,i)}})(),window.addEventListener("keydown",(e=>{const t=e.target;if(!t||"INPUT"!==t.tagName&&"TEXTAREA"!==t.tagName&&!t.isContentEditable)if(!(e.altKey||e.ctrlKey||e.metaKey)||"ArrowLeft"!==e.code&&"ArrowRight"!==e.code&&"ArrowUp"!==e.code&&"ArrowDown"!==e.code)switch(e.code){case"ArrowLeft":case"ArrowRight":case"ArrowUp":case"ArrowDown":case"Space":case"Tab":case"Backspace":case"F1":e.preventDefault()}else e.preventDefault()}),!0),(()=>{const e=document.getElementById("fs-area"),t=document.getElementById("fs-toggle");document.fullscreenEnabled?(t.addEventListener("click",(()=>{document.fullscreenElement?document.exitFullscreen():e.requestFullscreen().catch((e=>appendLog("Fullscreen request failed: "+e,!0)))})),document.addEventListener("fullscreenchange",(()=>{t.textContent=document.fullscreenElement?"Exit fullscreen":"Enter fullscreen"}))):t.style.display="none"})()
+</script>
+<script>
+// "Install web app" button. This page links the same manifest as shell.html
+// (see the `manifest` front-matter / the <link rel="manifest"> the layout
+// emits), and that manifest's start_url is /web-demo/shell.html — so a Chromium
+// install triggered HERE installs the standalone shell, not this embed page.
+// Browsers without beforeinstallprompt (iOS Safari, Firefox) can't install
+// in-place, so we send the user to the shell, which carries its own install
+// button and iOS "Add to Home Screen" instructions.
+(() => {
+  const installBtn = document.getElementById("install-btn");
+  if (!installBtn) return;
+  const shellUrl = "{{ '/web-demo/shell.html' | relative_url }}";
+
+  // Already running as the installed app? Nothing to install.
+  const isStandalone = window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches);
+  if (isStandalone) { installBtn.style.display = "none"; return; }
+
+  let deferredPrompt = null;
+  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferredPrompt = e; });
+  window.addEventListener("appinstalled", () => { installBtn.style.display = "none"; });
+
+  installBtn.addEventListener("click", async () => {
+    if (deferredPrompt) {                 // Chromium: real prompt -> installs the shell (manifest start_url)
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      return;
+    }
+    window.location.href = shellUrl;      // iOS/Firefox/criteria-not-met: install from the standalone shell instead
+  });
+})();
 </script>
 <script async src="{{ '/web-demo/2026-06-15/openlierox.js' | relative_url }}"></script>
 {:/nomarkdown}
