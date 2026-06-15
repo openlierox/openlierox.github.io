@@ -39,12 +39,23 @@ Repo: https://github.com/openlierox/openlierox.github.io (default branch `main`)
 - **Web Demo** (`web-demo/index.md`, `/web-demo/`) runs the WebAssembly
   build of OpenLieroX inline on its own page (canvas + loader copied from the
   engine's standalone `index.html`). The ~25 MB binaries ARE bundled in the repo
-  at `web-demo/2026-05-06/` (`openlierox.js` / `.wasm` / `.data`); the page
+  at `web-demo/2026-06-15/` (`openlierox.js` / `.wasm` / `.data`); the page
   loads them via `Module.locateFile` and an async `<script>`. The build is
   multi-threaded (pthreads / SharedArrayBuffer), which needs the page to be
   cross-origin isolated (COOP + COEP). GitHub Pages can't send those headers, so
   `web-demo/coi-serviceworker.js` installs a service worker (scope
   `/web-demo/`) that adds them; it covers both the page and the engine assets.
+- **Installable web app** (`web-demo/shell.html`, `/web-demo/shell.html`) is the
+  engine's full-page standalone shell (`build/wasm/shell/shell.html` upstream),
+  adapted for hosting here: served from a *stable* URL (so an installed app's
+  `start_url` survives engine updates — the binaries move to a new dated folder
+  each release, this page doesn't), with `Module.locateFile` + the async
+  `<script>` pointed at `web-demo/2026-06-15/`. Unlike the upstream shell (blank
+  `data:` favicon only), it adds a web manifest (`web-demo/manifest.webmanifest`,
+  Liquid-templated for `baseurl`) and the OpenLieroX icons
+  (`web-demo/icon-256.png` / `icon-512.png`, from the engine's `share/`) so the
+  "Install web app" button gets a real install prompt. The `/web-demo/` page
+  links to it. Both are covered by the same coi-serviceworker scope.
 
 ## Build / run
 ```sh
@@ -87,7 +98,7 @@ Cross-origin isolation (and thus the WASM game) only activates over HTTPS or
 - **Web Demo** is presented as a demo: the page text states it has no network
   multiplayer and worse performance than the native build, and links to
   `/downloads/` for the full experience. The heavy WASM binaries are committed to
-  the repo (~25 MB under `web-demo/2026-05-06/`) so the game is self-contained
+  the repo (~25 MB under `web-demo/2026-06-15/`) so the game is self-contained
   on GitHub Pages rather than hosted elsewhere.
 
 ## Repo
