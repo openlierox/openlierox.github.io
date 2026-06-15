@@ -39,7 +39,7 @@ Repo: https://github.com/openlierox/openlierox.github.io (default branch `main`)
 - **Web Demo** (`web-demo/index.md`, `/web-demo/`) runs the WebAssembly
   build of OpenLieroX inline on its own page (canvas + loader copied from the
   engine's standalone `index.html`). The ~25 MB binaries ARE bundled in the repo
-  at `web-demo/2026-05-06/` (`openlierox.js` / `.wasm` / `.data`); the page
+  at `web-demo/2026-06-15/` (`openlierox.js` / `.wasm` / `.data`); the page
   loads them via `Module.locateFile` and an async `<script>`. The build is
   multi-threaded (pthreads / SharedArrayBuffer), which needs the page to be
   cross-origin isolated (COOP + COEP). GitHub Pages can't send those headers, so
@@ -87,7 +87,7 @@ Cross-origin isolation (and thus the WASM game) only activates over HTTPS or
 - **Web Demo** is presented as a demo: the page text states it has no network
   multiplayer and worse performance than the native build, and links to
   `/downloads/` for the full experience. The heavy WASM binaries are committed to
-  the repo (~25 MB under `web-demo/2026-05-06/`) so the game is self-contained
+  the repo (~25 MB under `web-demo/2026-06-15/`) so the game is self-contained
   on GitHub Pages rather than hosted elsewhere.
 
 ## Repo
