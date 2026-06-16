@@ -13,7 +13,7 @@ Includes the game, basic skins, levels and weapon modifications.<br />
 <h2 id="beta_heading">Current beta version (for testing purposes)</h2>
 <div id="downloads_main_beta">
 <img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" id="main_img_download" />
-<a href="https://sourceforge.net/projects/openlierox/files/openlierox/OpenLieroX%200.59%20beta10/" id="main_download_link">Download OpenLieroX 0.59 beta10 for </a>
+<a href="https://github.com/openlierox/openlierox/releases/tag/master-beta-latest" id="main_download_link">Download OpenLieroX <span id="beta_version">20260616.11</span> (latest beta)</a>
 <a href="{{ '/install/' | relative_url }}"><img src="{{ '/official/images/help.png' | relative_url }}" alt="Installation instructions" title="View installation instructions" /></a><br />
 Includes the game, basic skins, levels and weapon modifications.<br />
 </div>
@@ -402,4 +402,28 @@ The FileBase contains many OpenLieroX related downloads, such as scripting tools
 <div class="release_end"></div>
 </div>
 
-    
+<!--
+  Keep the latest beta version number in sync with the rolling GitHub release.
+  The number printed above is a build-time fallback; this overwrites it with the
+  live value so a new release shows up here without editing the site.
+-->
+<script>
+  (function () {
+    var el = document.getElementById('beta_version');
+    if (!el || !window.fetch) return;
+    fetch('https://api.github.com/repos/openlierox/openlierox/releases/tags/master-beta-latest', {
+      headers: { 'Accept': 'application/vnd.github+json' }
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.name) return;
+        // Release name looks like "OpenLieroX 20260616.11+git.9d20f99 (latest beta)";
+        // pull out just the version token, fall back to the full name.
+        var m = data.name.match(/\d{6,}(?:\.\d+)?/);
+        el.textContent = m ? m[0] : data.name;
+      })
+      .catch(function () { /* keep the static fallback on any error */ });
+  })();
+</script>
+
+
