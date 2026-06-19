@@ -8,12 +8,10 @@ layout: default
 Based on Liero gameplay, OpenLierox is an **extremely addictive realtime worms** shoot-em-up backed by an active gamers community. Dozens of levels and mods are available to provide endless gaming pleasure.
 {:#main_desc}
 
-<div id="main_download">
+{% include download-section.html %}
 
-[![Download OpenLieroX]({{ '/official/default/images/download.png' | relative_url }} "Click to download"){:#main_img_download}]({{ '/downloads/' | relative_url }})
-[Download OpenLieroX 0.58 rc5]({{ '/downloads/' | relative_url }}){:#main_download_link}<br />
+<div style="text-align:center">
 [More downloads]({{ '/downloads/' | relative_url }}){:#main_download_sublink}
-
 </div>
 
 ## Screenshots
