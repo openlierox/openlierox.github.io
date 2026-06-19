@@ -471,7 +471,7 @@ li.li_space  {
 	width: 740px;
 }
 
-#downloads_main  {
+#download_latest_master  {
 	margin: 0px auto 0px auto;
 	width: 650px;
 	height: 50px;
@@ -482,7 +482,7 @@ li.li_space  {
 	border: 1px solid #49b0ca;	
 }
 
-#downloads_main_beta  {
+#downloads_classic  {
 	margin: 0px auto 0px auto;
 	width: 650px;
 	height: 50px;
