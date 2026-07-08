@@ -1,0 +1,109 @@
+name: Update WASM web demo
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+  repository_dispatch:
+    types: [update-wasm]
+
+permissions:
+  contents: write
+
+jobs:
+  update-wasm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get latest release from openlierox/openlierox
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RELEASE=$(gh release view --repo openlierox/openlierox --json tagName,assets --jq '.')
+          TAG=$(echo "$RELEASE" | jq -r '.tagName')
+          ASSET_URL=$(echo "$RELEASE" | jq -r '.assets[] | select(.name | endswith("-wasm.zip")) | .url' | head -1)
+          if [ -z "$ASSET_URL" ]; then
+            echo "No WASM asset found in latest release"
+            exit 1
+          fi
+          DATE_PART=$(echo "$TAG" | grep -oP '^\d{8}')
+          if [ -z "$DATE_PART" ]; then
+            echo "Could not parse date from tag: $TAG"
+            exit 1
+          fi
+          NEW_FOLDER="${DATE_PART:0:4}-${DATE_PART:4:2}-${DATE_PART:6:2}"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "folder=$NEW_FOLDER" >> $GITHUB_OUTPUT
+
+      - name: Check if already up to date
+        id: check
+        run: |
+          if [ -f .web-demo-version ]; then
+            CURRENT=$(cat .web-demo-version)
+            if [ "$CURRENT" = "${{ steps.release.outputs.tag }}" ]; then
+              echo "Already at version $CURRENT, skipping"
+              echo "up_to_date=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+          echo "up_to_date=false" >> $GITHUB_OUTPUT
+
+      - name: Download and extract WASM build
+        if: steps.check.outputs.up_to_date == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/wasm
+          gh release download "${{ steps.release.outputs.tag }}" \
+            --repo openlierox/openlierox \
+            --pattern "*-wasm.zip" \
+            --dir /tmp/wasm
+          unzip /tmp/wasm/*-wasm.zip -d /tmp/wasm/extracted
+          mkdir -p "web-demo/${{ steps.release.outputs.folder }}"
+          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.js "web-demo/${{ steps.release.outputs.folder }}/"
+          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.wasm "web-demo/${{ steps.release.outputs.folder }}/"
+          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.data "web-demo/${{ steps.release.outputs.folder }}/"
+
+      - name: Copy optional files from WASM bundle
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          SRC=/tmp/wasm/extracted/openlierox-wasm
+          for f in build-info.json _headers .htaccess; do
+            [ -f "$SRC/$f" ] && cp "$SRC/$f" "web-demo/${{ steps.release.outputs.folder }}/"
+          done
+
+      - name: Remove old version folders
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          for dir in web-demo/2*/; do
+            dirname=$(basename "$dir")
+            if [ "$dirname" != "${{ steps.release.outputs.folder }}" ]; then
+              rm -rf "web-demo/$dirname"
+            fi
+          done
+
+      - name: Update references in index.md and shell.html
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          for file in web-demo/index.md web-demo/shell.html; do
+            # Replace any YYYY-MM-DD folder reference with the new folder
+            sed -i 's|\(/web-demo/\)[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/|\1${{ steps.release.outputs.folder }}/|g' "$file"
+          done
+
+      - name: Store current version
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          echo "${{ steps.release.outputs.tag }}" > .web-demo-version
+
+      - name: Commit and push
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          git config user.name "openlierox-bot"
+          git config user.email "bot@openlierox.net"
+          git add -A
+          git commit -m "Update WASM build to ${{ steps.release.outputs.tag }}"
+          git push
