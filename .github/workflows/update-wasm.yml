@@ -1,11 +1,11 @@
 name: Update WASM web demo
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 6 * * *'
+  # Fired by openlierox/openlierox's release job after each master build.
   repository_dispatch:
     types: [update-wasm]
+  # Manual "Run workflow" button, for re-running or testing.
+  workflow_dispatch:
 
 permissions:
   contents: write
