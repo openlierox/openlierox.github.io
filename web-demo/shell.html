@@ -11,7 +11,7 @@
 #   * a web manifest + real OpenLieroX icons are added so "Install web app"
 #     gets a genuine install prompt (the upstream shell ships only a blank
 #     data: favicon, so Chromium never fires beforeinstallprompt);
-#   * the engine binaries live in /web-demo/2026-07-09/, so Module.locateFile
+#   * the engine binaries live in /web-demo/2026-07-10/, so Module.locateFile
 #     and the async <script src> at the end point there;
 #   * coi-serviceworker.js (loaded in <head>) installs the service worker that
 #     adds COOP/COEP, giving the cross-origin isolation the multi-threaded
@@ -157,7 +157,7 @@ layout: null
     var Module = {
       // The engine binaries (openlierox.wasm / .data) live in a dated folder,
       // not next to this stable shell, so point Emscripten's file resolver there.
-      locateFile: (path) => "{{ '/web-demo/2026-07-09/' | relative_url }}" + path,
+      locateFile: (path) => "{{ '/web-demo/2026-07-10/' | relative_url }}" + path,
       canvas: (() => {
         const c = document.getElementById("canvas");
         c.addEventListener("webglcontextlost", (e) => {
@@ -355,6 +355,6 @@ layout: null
       });
     })();
   </script>
-  <script async src="{{ '/web-demo/2026-07-09/openlierox.js' | relative_url }}"></script>
+  <script async src="{{ '/web-demo/2026-07-10/openlierox.js' | relative_url }}"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "name": "openlierox-wasm",
+  "version": "20260710.2",
+  "commit": "369a4e8252cb15ea64f88a34ceb19534159dfef8",
+  "commitShort": "369a4e825",
+  "commitDate": "2026-07-10T00:33:42+02:00",
+  "entry": "index.html",
+  "engineFiles": [
+    "openlierox.js",
+    "openlierox.wasm",
+    "openlierox.data"
+  ],
+  "files": [
+    "index.html",
+    "openlierox.js",
+    "openlierox.wasm",
+    "openlierox.data",
+    "coi-serviceworker.js",
+    "coi-serviceworker.LICENSE",
+    "manifest.webmanifest",
+    "icon-256.png",
+    "icon-512.png",
+    "_headers",
+    ".htaccess",
+    "serve.py",
+    "run.command"
+  ]
+}
