@@ -9,6 +9,9 @@ on:
 
 permissions:
   contents: write
+  # Needed to dispatch the Jekyll deploy after committing (see the final step):
+  # a push made with GITHUB_TOKEN does not itself trigger other workflows.
+  actions: write
 
 jobs:
   update-wasm:
@@ -117,3 +120,12 @@ jobs:
           git add -A
           git commit -m "Update WASM build to ${{ steps.release.outputs.tag }}"
           git push
+
+      - name: Deploy the updated site
+        if: steps.check.outputs.up_to_date == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # A push made with GITHUB_TOKEN doesn't trigger jekyll.yml, so the new
+        # binaries would never go live. workflow_dispatch is the documented
+        # exception that GITHUB_TOKEN *can* trigger, so kick the deploy directly.
+        run: gh workflow run jekyll.yml --ref main
