@@ -57,23 +57,33 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           mkdir -p /tmp/wasm
           gh release download "${{ steps.release.outputs.tag }}" \
             --repo openlierox/openlierox \
             --pattern "*-wasm.zip" \
             --dir /tmp/wasm
           unzip /tmp/wasm/*-wasm.zip -d /tmp/wasm/extracted
-          mkdir -p "web-demo/${{ steps.release.outputs.folder }}"
-          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.js "web-demo/${{ steps.release.outputs.folder }}/"
-          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.wasm "web-demo/${{ steps.release.outputs.folder }}/"
-          cp /tmp/wasm/extracted/openlierox-wasm/openlierox.data "web-demo/${{ steps.release.outputs.folder }}/"
+          # package-wasm.yml renames the bundle's top-level directory to embed
+          # the version (openlierox-<version>-wasm), so don't hardcode it --
+          # pick the single directory the zip extracted to.
+          SRC=$(find /tmp/wasm/extracted -mindepth 1 -maxdepth 1 -type d | head -1)
+          if [ -z "$SRC" ]; then
+            echo "No directory found inside the WASM bundle" >&2
+            exit 1
+          fi
+          echo "src=$SRC" >> "$GITHUB_ENV"
+          DEST="web-demo/${{ steps.release.outputs.folder }}"
+          mkdir -p "$DEST"
+          cp "$SRC/openlierox.js" "$DEST/"
+          cp "$SRC/openlierox.wasm" "$DEST/"
+          cp "$SRC/openlierox.data" "$DEST/"
 
       - name: Copy optional files from WASM bundle
         if: steps.check.outputs.up_to_date == 'false'
         run: |
-          SRC=/tmp/wasm/extracted/openlierox-wasm
           for f in build-info.json _headers .htaccess; do
-            [ -f "$SRC/$f" ] && cp "$SRC/$f" "web-demo/${{ steps.release.outputs.folder }}/"
+            [ -f "$src/$f" ] && cp "$src/$f" "web-demo/${{ steps.release.outputs.folder }}/"
           done
 
       - name: Remove old version folders
