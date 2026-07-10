@@ -1,46 +1,84 @@
 <div id="download_section" style="display:none">
-<div id="download_latest_master">
-<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" id="main_img_download" />
-<a href="https://github.com/openlierox/openlierox/releases/latest" id="main_download_link">Download OpenLieroX <span id="latest_version"></span> (latest master)</a>
-<a href="{{ '/install/' | relative_url }}"><img src="{{ '/official/images/help.png' | relative_url }}" alt="Installation instructions" title="View installation instructions" /></a><br />
+<div class="download_latest_master">
+<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" class="main_img_download" />
+<div class="download_body">
+<a href="https://github.com/openlierox/openlierox/releases/latest" class="main_download_link">Download OpenLieroX <span id="latest_release"></span> (Latest Release)</a><br />
 Includes the game, basic skins, levels and weapon modifications.<br />
+<div class="all_releases_link">
+<a href="https://github.com/openlierox/openlierox/releases?q=prerelease%3Afalse">All releases</a>
+</div>
+</div>
 </div>
 
-<h2 id="beta_heading">Classic version</h2>
-<div id="downloads_classic">
-<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" id="main_img_download" />
-<a href="https://github.com/openlierox/openlierox/releases/tag/0.58_rc5" id="main_download_link">Download OpenLieroX classic (0.58)</a>
-<a href="{{ '/install/' | relative_url }}"><img src="{{ '/official/images/help.png' | relative_url }}" alt="Installation instructions" title="View installation instructions" /></a><br />
+<div class="master_prerelease">
+<img src="{{ '/official/default/images/download.png' | relative_url }}" alt="Download" class="main_img_download" />
+<div class="download_body">
+<a href="https://github.com/openlierox/openlierox/releases" id="main_download_link_master" class="main_download_link">Download OpenLieroX <span id="latest_master"></span> (Latest development build)</a><br />
 Includes the game, basic skins, levels and weapon modifications.<br />
+<div class="all_releases_link">
+<a href="https://github.com/openlierox/openlierox/releases?q=prerelease%3Atrue">All development builds</a>
 </div>
 </div>
+</div>
+</div>
+
 <noscript><style>#download_section{display:block !important}</style></noscript>
 
 <!--
-  Fill the latest-master version number in from the rolling GitHub release, and
-  keep the whole download section hidden until that lookup settles so the primary
-  link never flashes without its version number.
+  Fill the version numbers in from GitHub: the "Latest Release" link tracks the
+  newest stable release (releases/latest, which skips pre-releases), and the
+  "Latest development build" link tracks the newest published release overall
+  (first non-draft entry in the list, newest-first). Keep the whole download
+  section hidden until both lookups settle so the links never flash without
+  their version numbers.
 -->
 <script>
   (function () {
     var section = document.getElementById('download_section');
-    var el = document.getElementById('latest_version');
     function reveal() { if (section) section.style.display = ''; }
-    if (!el || !window.fetch) { reveal(); return; }
-    fetch('https://api.github.com/repos/openlierox/openlierox/releases/latest', {
-      headers: { 'Accept': 'application/vnd.github+json' }
-    })
+    if (!window.fetch) { reveal(); return; }
+
+    // Release name looks like "OpenLieroX 20260619.1+git.22970ef"; pull out just
+    // the version token, falling back to the tag name, then the whole name.
+    function versionOf(data) {
+      var label = data && (data.name || data.tag_name);
+      if (!label) return null;
+      var m = label.match(/\d{6,}(?:\.\d+)?/);
+      return m ? m[0] : label;
+    }
+
+    var opts = { headers: { 'Accept': 'application/vnd.github+json' } };
+
+    // Latest stable release.
+    var stable = fetch('https://api.github.com/repos/openlierox/openlierox/releases/latest', opts)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (!data) return;
-        // Release name looks like "OpenLieroX 20260619.1+git.22970ef"; pull out
-        // just the version token, falling back to the tag name, then the name.
-        var label = data.name || data.tag_name;
-        if (!label) return;
-        var m = label.match(/\d{6,}(?:\.\d+)?/);
-        el.textContent = m ? m[0] : label;
+        var el = document.getElementById('latest_release');
+        var v = versionOf(data);
+        if (el && v) el.textContent = v;
       })
-      .catch(function () { /* keep the static fallback on any error */ })
-      .then(reveal);
+      .catch(function () { /* keep the static fallback on any error */ });
+
+    // Latest development build: the newest published release, regardless of
+    // whether it is flagged as a pre-release. GitHub returns the list
+    // newest-first, so this is the first non-draft entry.
+    var pre = fetch('https://api.github.com/repos/openlierox/openlierox/releases?per_page=30', opts)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (list) {
+        if (!list || !list.length) return;
+        var rel = null;
+        for (var i = 0; i < list.length; i++) {
+          if (!list[i].draft) { rel = list[i]; break; }
+        }
+        if (!rel) return;
+        var el = document.getElementById('latest_master');
+        var link = document.getElementById('main_download_link_master');
+        var v = versionOf(rel);
+        if (el && v) el.textContent = v;
+        if (link && rel.html_url) link.href = rel.html_url;
+      })
+      .catch(function () { /* keep the static fallback on any error */ });
+
+    Promise.all([stable, pre]).then(reveal, reveal);
   })();
 </script>
