@@ -1,9 +1,9 @@
 {
   "name": "openlierox-wasm",
-  "version": "20260710.1",
-  "commit": "2740583b5a23fbc2b1ec5f32f94d1474fa46ba2a",
-  "commitShort": "2740583b5",
-  "commitDate": "2026-07-10T00:31:57+02:00",
+  "version": "20260710.3",
+  "commit": "a178f9cc62dffb253afd6c287c3c01d46cbf0be6",
+  "commitShort": "a178f9cc6",
+  "commitDate": "2026-07-10T08:44:38+02:00",
   "entry": "index.html",
   "engineFiles": [
     "openlierox.js",
