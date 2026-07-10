@@ -422,17 +422,25 @@ li.li_space  {
 }
 
 
-#main_download_link  {
+.main_download_link  {
 	color: black;
 	text-decoration: underline;
 	font-size: 19px;
 	font-weight: bold;
 }
 
-#main_img_download  {
+.main_img_download  {
 	float: left;
 	border: 0px;
 	margin-right: 20px;
+}
+
+/* Everything except the icon lives in .download_body; making it a block
+   formatting context keeps all its content (including a title that wraps to
+   several lines) in one column beside the floated icon, instead of the later
+   lines dropping back under the icon. */
+.download_body  {
+	overflow: hidden;
 }
 
 #main_download_sublink  {
@@ -471,32 +479,61 @@ li.li_space  {
 	width: 740px;
 }
 
-#download_latest_master  {
+.download_latest_master  {
 	margin: 0px auto 0px auto;
 	width: 650px;
-	height: 50px;
-	padding: 10px;
+	min-height: 50px;
+	overflow: hidden;
+	padding: 10px 10px 22px 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	text-align: left;
 	background-color: #aaeeff;
-	border: 1px solid #49b0ca;	
+	border: 1px solid #49b0ca;
 }
 
-#downloads_classic  {
+.downloads_classic  {
 	margin: 0px auto 0px auto;
 	width: 650px;
-	height: 50px;
-	padding: 10px;
+	min-height: 50px;
+	overflow: hidden;
+	padding: 10px 10px 22px 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	text-align: left;
 	background-color: #ffaa33;
-	border: 1px solid #FF8800;	
+	border: 1px solid #FF8800;
 }
 
-#beta_heading  {
+.master_prerelease  {
+	margin: 0px auto 0px auto;
+	width: 650px;
+	min-height: 50px;
+	overflow: hidden;
+	padding: 10px 10px 22px 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	text-align: left;
+	background-color: #ffaa33;
+	border: 1px solid #FF8800;
+}
+
+/* kramdown wraps each box's content in <p>, which the global `p` rule justifies;
+   force it back to left so long titles don't stretch when they wrap. */
+.download_latest_master p,
+.master_prerelease p,
+.downloads_classic p  {
+	text-align: left;
+}
+
+.beta_heading  {
 	margin-top: 40px;
 	width: 100%;
 	text-align: center;
+}
+
+.all_releases_link  {
+	margin-top: 4px;
 }
 
 .enhancement  {
