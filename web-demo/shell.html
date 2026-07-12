@@ -7,12 +7,14 @@
 # openlierox repo), adapted for hosting on this site:
 #   * served from a STABLE url (/web-demo/shell.html) so an installed web app's
 #     start_url keeps working across engine updates (the binaries move to a new
-#     dated folder each release; this page does not);
+#     versioned folder each release; this page does not);
 #   * a web manifest + real OpenLieroX icons are added so "Install web app"
 #     gets a genuine install prompt (the upstream shell ships only a blank
 #     data: favicon, so Chromium never fires beforeinstallprompt);
-#   * the engine binaries live in /web-demo/2026-07-10/, so Module.locateFile
-#     and the async <script src> at the end point there;
+#   * the engine binaries live under /web-demo/<channel>/<version>/; the
+#     bootstrap at the end reads /web-demo/channels.json, resolves the chosen
+#     channel's folder into ENGINE_DIR (used by Module.locateFile) and injects
+#     the engine <script>. A dropdown switches channel via ?channel=… + reload;
 #   * coi-serviceworker.js (loaded in <head>) installs the service worker that
 #     adds COOP/COEP, giving the cross-origin isolation the multi-threaded
 #     (pthreads / SharedArrayBuffer) build needs. Its /web-demo/ scope covers
@@ -56,10 +58,10 @@ layout: null
                  color: #ddd; font: 14px/1.4 monospace; }
     #status.err { background: #803030; color: #fff; }
     #toolbar   { padding: 4px 0; }
-    #toolbar button { background: #2a2a2a; color: #ddd; border: 1px solid #444;
+    #toolbar button, #toolbar select { background: #2a2a2a; color: #ddd; border: 1px solid #444;
                       padding: 4px 10px; font: 12px system-ui, sans-serif;
                       cursor: pointer; border-radius: 3px; }
-    #toolbar button:hover { background: #3a3a3a; }
+    #toolbar button:hover, #toolbar select:hover { background: #3a3a3a; }
     /* Lock the canvas to OLX's native resolution. Letting it stretch
      * makes mouse coordinates ambiguous (DOM vs SDL pixel space) and
      * also softens the pixel-art assets. */
@@ -94,6 +96,7 @@ layout: null
 <body>
   <div id="wrapper">
     <div id="toolbar">
+      <select id="channel" title="Choose which build to play" aria-label="Choose which build to play"></select>
       <button id="fs-toggle" type="button">Enter fullscreen</button>
       <button id="install-btn" type="button">Install web app</button>
     </div>
@@ -114,6 +117,13 @@ layout: null
   </div>
 
   <script>
+    // Base URL of the web demo (baseurl-aware). The engine binaries for the
+    // chosen channel live at WEBDEMO_BASE + "<channel>/<version>/"; the
+    // bootstrap at the end of <body> resolves that into ENGINE_DIR before the
+    // engine script loads (Module.locateFile reads it).
+    const WEBDEMO_BASE = "{{ '/web-demo/' | relative_url }}";
+    let ENGINE_DIR = "";
+
     const statusEl = document.getElementById("status");
     const logEl    = document.getElementById("log");
 
@@ -155,9 +165,10 @@ layout: null
     window.olxOnEngineReady = () => { statusEl.style.display = "none"; };
 
     var Module = {
-      // The engine binaries (openlierox.wasm / .data) live in a dated folder,
-      // not next to this stable shell, so point Emscripten's file resolver there.
-      locateFile: (path) => "{{ '/web-demo/2026-07-10/' | relative_url }}" + path,
+      // The engine binaries (openlierox.wasm / .data) live in the chosen
+      // channel's versioned folder, not next to this stable shell, so point
+      // Emscripten's file resolver at ENGINE_DIR (set by the bootstrap below).
+      locateFile: (path) => ENGINE_DIR + path,
       canvas: (() => {
         const c = document.getElementById("canvas");
         c.addEventListener("webglcontextlost", (e) => {
@@ -355,6 +366,55 @@ layout: null
       });
     })();
   </script>
-  <script async src="{{ '/web-demo/2026-07-10/openlierox.js' | relative_url }}"></script>
+  <script>
+    // Pick which build to load. channels.json (written by the update workflow)
+    // maps each channel to its current version; the engine binaries live at
+    // /web-demo/<channel>/<version>/. The visitor's choice rides in ?channel=…,
+    // so switching just reloads the page (only one engine loads at a time). An
+    // installed web app opens its start_url with no query, i.e. the default
+    // (release) channel.
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      let channel = params.get("channel");
+      let channels;
+      try {
+        const res = await fetch(WEBDEMO_BASE + "channels.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        channels = await res.json();
+      } catch (e) {
+        Module.setStatus("Error loading the build list: " + e);
+        return;
+      }
+      const has = (c) => channels[c] && channels[c].version;
+      // Default to the stable release; fall back to whatever channel exists.
+      if (!has(channel)) channel = has("release") ? "release" : (has("prerelease") ? "prerelease" : null);
+      if (!channel) { Module.setStatus("Error: no web-demo builds are available yet."); return; }
+      ENGINE_DIR = WEBDEMO_BASE + channel + "/" + channels[channel].version + "/";
+
+      const sel = document.getElementById("channel");
+      if (sel) {
+        const labels = { release: "Latest release", prerelease: "Latest pre-release" };
+        for (const c of ["release", "prerelease"]) {
+          if (!has(c)) continue;
+          const opt = document.createElement("option");
+          opt.value = c;
+          opt.textContent = (labels[c] || c) + " — " + channels[c].version;
+          opt.selected = c === channel;
+          sel.appendChild(opt);
+        }
+        sel.addEventListener("change", () => {
+          const p = new URLSearchParams(location.search);
+          p.set("channel", sel.value);
+          location.search = p.toString();
+        });
+      }
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = ENGINE_DIR + "openlierox.js";
+      s.onerror = () => Module.setStatus("Error: failed to load the engine from " + ENGINE_DIR);
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
