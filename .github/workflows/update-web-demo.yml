@@ -1,0 +1,89 @@
+name: Update WASM web demo
+
+# Keeps the playable web demo in sync with openlierox/openlierox's GitHub
+# releases, which are the single source of truth. Two channels:
+#
+#   prerelease -> the newest prerelease (published on every master merge)
+#   release    -> the newest "Latest" release (a maintainer promotes a build by
+#                 ticking "Set as the latest release" in the GitHub UI)
+#
+# Both are polled on a schedule and mirrored into web-demo/<channel>/<version>/;
+# the web-demo pages read web-demo/channels.json at runtime and let the visitor
+# pick a channel. The prerelease build also pings us via repository_dispatch so
+# a fresh build goes live promptly; the release channel relies on the cron (or a
+# manual run) since promoting a release in the UI fires no event here.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+  repository_dispatch:
+    types: [update-wasm]
+
+permissions:
+  contents: write
+  # Needed to dispatch the Jekyll deploy after committing (see the final step):
+  # a push made with GITHUB_TOKEN does not itself trigger other workflows.
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve the tag for each channel
+        id: tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # "Latest" release: gh release view (no tag) resolves GitHub's latest
+          # release, which by definition excludes prereleases and drafts.
+          RELEASE=$(gh release view --repo openlierox/openlierox --json tagName --jq '.tagName' 2>/dev/null || true)
+          # Newest prerelease: the REST releases list is newest-first; take the
+          # first published (non-draft) prerelease. (The REST API field is
+          # tag_name, unlike gh's --json tagName above.)
+          PRERELEASE=$(gh api repos/openlierox/openlierox/releases \
+            --jq '[.[] | select(.prerelease and (.draft | not))][0].tag_name' 2>/dev/null || true)
+          echo "release=$RELEASE" >> "$GITHUB_OUTPUT"
+          echo "prerelease=$PRERELEASE" >> "$GITHUB_OUTPUT"
+          echo "Resolved: release='$RELEASE' prerelease='$PRERELEASE'"
+
+      - name: Stage the release channel
+        if: steps.tags.outputs.release != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./tools/stage-web-demo.sh release "${{ steps.tags.outputs.release }}"
+
+      - name: Stage the prerelease channel
+        if: steps.tags.outputs.prerelease != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./tools/stage-web-demo.sh prerelease "${{ steps.tags.outputs.prerelease }}"
+
+      - name: Commit and push if anything changed
+        id: commit
+        run: |
+          set -euo pipefail
+          git config user.name "openlierox-bot"
+          git config user.email "bot@openlierox.net"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Web demo already up to date; nothing to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Update web demo (release=${{ steps.tags.outputs.release }}, prerelease=${{ steps.tags.outputs.prerelease }})"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy the updated site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # A push made with GITHUB_TOKEN doesn't trigger jekyll.yml, so the new
+        # binaries would never go live. workflow_dispatch is the documented
+        # exception that GITHUB_TOKEN *can* trigger, so kick the deploy directly.
+        run: gh workflow run jekyll.yml --ref main

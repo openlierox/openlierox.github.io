@@ -29,3 +29,5 @@ exclude:
   - CLAUDE.md
   - vendor
   - .github
+  # Build tooling (web-demo channel staging script) — not part of the site.
+  - tools
