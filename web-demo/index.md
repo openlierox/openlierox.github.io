@@ -128,7 +128,7 @@ const WEBDEMO_BASE="{{ '/web-demo/' | relative_url }}";let ENGINE_DIR="";const s
 
   const sel = document.getElementById("channel");
   if (sel) {
-    const labels = { release: "Latest release", prerelease: "Latest pre-release" };
+    const labels = { release: "Latest release", prerelease: "Latest development build" };
     for (const c of ["release", "prerelease"]) {
       if (!has(c)) continue;
       const opt = document.createElement("option");
